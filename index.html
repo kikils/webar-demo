@@ -9,21 +9,26 @@
   <!-- A-Frame ライブラリの読み込み -->
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <!-- AR.js ライブラリの読み込み -->
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
   
   <!-- A-Frame の VR空間に AR.js を紐づける（デバッグUIを非表示） -->
   <a-scene embedded arjs="debugUIEnabled:false;">
     <a-assets>
       <img id="img"src="e37b67504790838c25f1f2bf98504b4b_w.jpeg" />
     </a-assets>
- 
-    <!-- マーカーを登録（プリセットされている「hiro」マーカー） -->
-    <a-marker preset="hiro">
+    <a-nft
+      type="nft"
+      url="cat.png"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
+    >
       <a-plane
         rotation="-90 0 0"
         src="#img"
       ></a-plane>
-    </a-marker>
+    </a-nft>
  
     <!-- AR用のカメラを置く -->
     <a-entity camera></a-entity>
