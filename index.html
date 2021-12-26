@@ -13,11 +13,16 @@
   
   <!-- A-Frame の VR空間に AR.js を紐づける（デバッグUIを非表示） -->
   <a-scene embedded arjs="debugUIEnabled:false;">
+    <a-assets>
+      <img id="img"src="e37b67504790838c25f1f2bf98504b4b_w.jpeg" />
+    </a-assets>
  
     <!-- マーカーを登録（プリセットされている「hiro」マーカー） -->
     <a-marker preset="hiro">
-      <!-- マーカーの場所に箱を置く（見やすいようにワイヤーフレーム表示） -->
-      <a-box position="0 0.5 0" wireframe="true"></a-box>
+      <a-plane
+        rotation="-90 0 0"
+        src="#img"
+      ></a-plane>
     </a-marker>
  
     <!-- AR用のカメラを置く -->
